@@ -1,4 +1,4 @@
-NAME = replace
+NAME = fixedtest
 
 CC = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror -MMD -g -fsanitize=address
