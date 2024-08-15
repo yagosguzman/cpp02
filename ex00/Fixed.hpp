@@ -19,11 +19,11 @@ class Fixed
 {
 	private:
 		int	_value;
-		static const int _fracbits;
+		static const int _fracbits = 8;
 	public:
 		Fixed(void);
 		Fixed(const Fixed& copy);
-		Fixed &operator = (const Fixed& src);
+		Fixed& operator = (const Fixed& src);
 		~Fixed(void);
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
