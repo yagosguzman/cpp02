@@ -21,10 +21,10 @@ Fixed::Fixed(const int i_value)
 Fixed::Fixed(const float f_value)
 {
    std::cout << "Float constructor called" << std::endl;
-   _value = f_value;
+   _value = f_value; // Not finished yet
 }
 
-Fixed& Fixed::operator = (const Fixed& src)
+Fixed& Fixed::operator=(const Fixed& src)
 {
    if (this != &src)
       this->_value = src.getRawBits();
@@ -49,7 +49,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void) const
 {
-
+ //TO DO
 }
 
 int Fixed::toInt(void) const
