@@ -1,4 +1,4 @@
-NAME = fixed00
+NAME = fixed01
 
 CC = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror -MMD -g -fsanitize=address
