@@ -20,6 +20,7 @@ class Fixed
 	private:
 		int	_value;
 		static const int _fracbits = 8;
+
 	public:
 		Fixed(void);
 		Fixed(const Fixed& copy);
