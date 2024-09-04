@@ -26,7 +26,15 @@ class Fixed
 		Fixed(const Fixed& copy);
 		Fixed(const int i_value);
 		Fixed(const float f_value);
+		~Fixed(void);
 		Fixed& operator=(const Fixed& src);
+
+		bool operator>(const Fixed& src) const;
+		bool operator>=(const Fixed& src) const;
+		bool operator<(const Fixed& src) const;
+		bool operator<=(const Fixed& src) const;
+		bool operator==(const Fixed& src) const;
+		bool operator!=(const Fixed& src) const;
 
 		Fixed operator+(const Fixed& src) const;
 		Fixed operator-(const Fixed& src) const;
@@ -34,22 +42,18 @@ class Fixed
 		Fixed operator/(const Fixed& src) const;
 		
 		Fixed& operator++(void);
-		Fixed operator++(const Fixed& src);
 		Fixed& operator--(void);
-		Fixed operator--(const Fixed& src);
-		
-		bool operator>(const Fixed& src) const;
-		bool operator>=(const Fixed& src) const;
-		bool operator<(const Fixed& src) const;
-		bool operator<=(const Fixed& src) const;
-		bool operator==(const Fixed& src) const;
-		bool operator!=(const Fixed& src) const;
-		
-		~Fixed(void);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-		float	toFloat(void) const;
-		int		toInt(void) const;
+		Fixed operator++(int);
+		Fixed operator--(int);
+	
+		int					getRawBits(void) const;
+		void				setRawBits(int const raw);
+		float				toFloat(void) const;
+		int					toInt(void) const;
+		static Fixed&		min(Fixed& a, Fixed& b);
+		static Fixed&		max(Fixed& a, Fixed& b);
+		static const Fixed&	min(const Fixed& a, const Fixed& b);
+		static const Fixed&	max(const Fixed& a, const Fixed& b);
 };
 
 std::ostream& operator<<(std::ostream& out, const Fixed& src);

@@ -24,16 +24,16 @@ Fixed::Fixed(const float f_value)
    _value = roundf(f_value * (1 << _fracbits)); // Bitshifting to move the comma (same as multiplying by 2^8)
 }
 
+Fixed::~Fixed(void)
+{
+   std::cout << "Destructor called" << std::endl;
+}
+
 Fixed& Fixed::operator=(const Fixed& src)
 {
    std::cout << "Copy assignment operator called" << std::endl;
    _value = src.getRawBits();
    return (*this);
-}
-
-Fixed::~Fixed(void)
-{
-   std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
